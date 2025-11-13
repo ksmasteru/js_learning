@@ -1,0 +1,32 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres-db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: myappdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+  app:
+    build: ./backend/
+    container_name: my-app
+    restart: always
+    depends_on:
+      - postgres
+    environment:
+      DB_USER: "postgres"
+      DB_HOST: "postgres"        # ✅ Must match service name
+      DB_NAME: "postgres"
+      DB_PASS: "postgres"
+      DB_PORT: 5432
+    ports:
+      - "5500:3000"
+      - "3000:3000"
+
+volumes:
+  pg_data:

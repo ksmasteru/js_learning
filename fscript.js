@@ -16,7 +16,6 @@ loginForm.addEventListener('submit', async(e) =>{
         headers:{
             'content-type': 'application/json',
         },
-        credentials: 'include',
         body: JSON.stringify(data)
     });
     const res = await result.json();
@@ -39,7 +38,6 @@ registerForm.addEventListener('submit', async function(e) {
             "content-type": "application/json"
         },
         body: JSON.stringify(data),
-        credentials: 'include'
     });
     
     const res = await result.json();
@@ -53,8 +51,7 @@ profileBtn.addEventListener('click', async function(e) {
         method: "GET",
         headers:{
             "content-type": "application/json",
-        },
-        credentials: "include"});
+        }});
     const res = await result.json();
     if (res.error)
     {

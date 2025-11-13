@@ -3,10 +3,9 @@
 <body>
 
 <h1>Login page</h1>
-<p id="loginMessage"></p><br>
-<form id = "loginForm">
-    <label for="username">email:</label>
-    <input id = "username" type ="text" name="email"><br><br>
+<form action="http://localhost:3000/login" method="post">
+    <label for="username">username:</label>
+    <input id = "username" type ="text" name="username"><br><br>
     <label for="password">Password: </label>
     <input id = "password" type= "password" name="password"><br><br>
     <input type="submit" value="login">
@@ -14,19 +13,12 @@
 <br><br><br><br>
 
 <h1>Registration Form</h1>
-<p id="registerMessage"></p><br>
-<form id = "registration_form">
-    <label for="rusername">Email: </label>
-    <input id = "rusername" name="email"><br><br>
-    <label for="rpassword">Password:</label>
-    <input id="rpassword" name="password"><br><br>
+<form action="http://localhost:3000/register" method="post">
+    <label for="username">username: </label>
+    <input id = "username" name="username"><br><br>
+    <label for="password">Password:</label>
+    <input id="password" name="password"><br><br>
     <input type="submit" value="sign up">
 </form>
-<br><br><br><br>
-
-<h1>Profile</h1>
-<button id = 'ProfileBtn'>get Profile Info</button>
-<div id="userInfo"></div>
-<script src="fscript.js"></script>
 </body>
 </html>
